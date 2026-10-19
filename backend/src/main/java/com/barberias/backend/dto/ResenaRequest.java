@@ -7,18 +7,9 @@ import jakarta.validation.constraints.Size;
 
 public class ResenaRequest {
 
-    @NotNull(message = "El usuario es obligatorio")
-    private Long usuarioId;
-
     @NotNull(message = "La calificación es obligatoria")
-    @Min(
-        value = 1,
-        message = "La calificación mínima es 1"
-    )
-    @Max(
-        value = 5,
-        message = "La calificación máxima es 5"
-    )
+    @Min(value = 1, message = "La calificación mínima es 1")
+    @Max(value = 5, message = "La calificación máxima es 5")
     private Integer calificacion;
 
     @Size(
@@ -28,14 +19,6 @@ public class ResenaRequest {
     private String comentario;
 
     public ResenaRequest() {
-    }
-
-    public Long getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
     }
 
     public Integer getCalificacion() {

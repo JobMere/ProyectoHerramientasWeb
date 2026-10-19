@@ -35,6 +35,7 @@ public class ResenaService {
 
     public ResenaResponse crear(
             Long barberiaId,
+            String correoUsuario,
             ResenaRequest request) {
 
         Barberia barberia = barberiaRepository
@@ -46,7 +47,7 @@ public class ResenaService {
                 );
 
         Usuario usuario = usuarioRepository
-                .findById(request.getUsuarioId())
+                .findByCorreo(correoUsuario)
                 .orElseThrow(() ->
                         new IllegalArgumentException(
                                 "Usuario no encontrado"
@@ -85,9 +86,10 @@ public class ResenaService {
                 request.getComentario()
         );
 
-        return convertir(
-                resenaRepository.save(resena)
-        );
+        Resena guardada =
+                resenaRepository.save(resena);
+
+        return convertir(guardada);
     }
 
     public List<ResenaResponse> listar(
@@ -132,7 +134,9 @@ public class ResenaService {
                 nombreUsuario,
 
                 resena.getCalificacion(),
+
                 resena.getComentario(),
+
                 resena.getFechaResena()
         );
     }

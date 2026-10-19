@@ -2,12 +2,16 @@ package com.barberias.backend.controller;
 
 import com.barberias.backend.dto.ResenaRequest;
 import com.barberias.backend.dto.ResenaResponse;
+
 import com.barberias.backend.service.ResenaService;
 
 import jakarta.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import org.springframework.security.core.Authentication;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,14 +33,18 @@ public class ResenaController {
     @PostMapping
     public ResponseEntity<?> crear(
             @PathVariable Long barberiaId,
-            @Valid
-            @RequestBody ResenaRequest request) {
+            @Valid @RequestBody ResenaRequest request,
+            Authentication authentication) {
 
         try {
+
+            String correoUsuario =
+                    authentication.getName();
 
             ResenaResponse response =
                     resenaService.crear(
                             barberiaId,
+                            correoUsuario,
                             request
                     );
 
@@ -68,7 +76,9 @@ public class ResenaController {
                             barberiaId
                     );
 
-            return ResponseEntity.ok(resenas);
+            return ResponseEntity.ok(
+                    resenas
+            );
 
         } catch (IllegalArgumentException e) {
 

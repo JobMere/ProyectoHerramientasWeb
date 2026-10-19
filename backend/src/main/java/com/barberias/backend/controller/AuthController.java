@@ -2,13 +2,16 @@ package com.barberias.backend.controller;
 
 import com.barberias.backend.dto.AuthResponse;
 import com.barberias.backend.dto.LoginRequest;
+import com.barberias.backend.dto.LoginResponse;
 import com.barberias.backend.dto.RegistroRequest;
+
 import com.barberias.backend.service.AuthService;
 
 import jakarta.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -20,18 +23,25 @@ public class AuthController {
 
     private final AuthService authService;
 
-    public AuthController(AuthService authService) {
-        this.authService = authService;
+    public AuthController(
+            AuthService authService) {
+
+        this.authService =
+                authService;
     }
 
     @PostMapping("/register")
     public ResponseEntity<?> registrar(
-            @Valid @RequestBody RegistroRequest request) {
+            @Valid
+            @RequestBody
+            RegistroRequest request) {
 
         try {
 
             AuthResponse response =
-                    authService.registrar(request);
+                    authService.registrar(
+                            request
+                    );
 
             return ResponseEntity
                     .status(HttpStatus.CREATED)
@@ -41,32 +51,44 @@ public class AuthController {
 
             return ResponseEntity
                     .badRequest()
-                    .body(Map.of(
-                            "error",
-                            e.getMessage()
-                    ));
+                    .body(
+                            Map.of(
+                                    "error",
+                                    e.getMessage()
+                            )
+                    );
         }
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(
-            @Valid @RequestBody LoginRequest request) {
+            @Valid
+            @RequestBody
+            LoginRequest request) {
 
         try {
 
-            AuthResponse response =
-                    authService.login(request);
+            LoginResponse response =
+                    authService.login(
+                            request
+                    );
 
-            return ResponseEntity.ok(response);
+            return ResponseEntity.ok(
+                    response
+            );
 
         } catch (IllegalArgumentException e) {
 
             return ResponseEntity
-                    .status(HttpStatus.UNAUTHORIZED)
-                    .body(Map.of(
-                            "error",
-                            e.getMessage()
-                    ));
+                    .status(
+                            HttpStatus.UNAUTHORIZED
+                    )
+                    .body(
+                            Map.of(
+                                    "error",
+                                    e.getMessage()
+                            )
+                    );
         }
     }
 }
