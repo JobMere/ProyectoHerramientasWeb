@@ -1,0 +1,40 @@
+/* Estilos extra para la página de Barberías (usa las variables de styles.css) */
+.page-header{
+  background:radial-gradient(circle at 80% 20%, #2a2118 0%, #14100d 65%);
+  padding:3.5rem 0 3rem;
+}
+.page-header h1{ color:#fff; font-size:2.4rem; }
+.page-header h1 .accent{ color:var(--bh-gold); }
+.page-header .lead{ color:#d8d3cb; font-size:1.02rem; }
+
+.barber-photo{ background-size:cover; background-position:center; }
+.barber-photo.has-img::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(10,8,6,.75), rgba(10,8,6,.05));
+}
+.barber-photo span{ position:relative; z-index:1; }
+.barber-photo .fav{ z-index:1; }
+
+.barber-body .info{ color:#8a847b; font-size:.85rem; }
+.barber-body .info i{ margin-right:.25rem; color:var(--bh-gold-dark); }
+.servicio-row{
+  display:flex; justify-content:space-between; gap:.5rem;
+  font-size:.83rem; padding:.3rem 0; border-bottom:1px dashed #e9e4da;
+}
+.servicio-row:last-child{ border-bottom:none; }
+.servicio-row .precio{ font-weight:600; color:#8a6b3c; white-space:nowrap; }
+.sin-datos{ color:#a39d93; font-size:.82rem; font-style:italic; }
+
+.estado-msg{
+  background:#fff; border:1px dashed #d8d2c6; border-radius:14px;
+  padding:2rem; text-align:center; color:#6b6560;
+}
+.estado-msg.error{ border-color:#d9a3a3; color:#8a3b3b; }
+
+/* ===== Panel "Mi barbería" ===== */
+.panel-card{
+  background:#fff; border-radius:14px; padding:1.5rem;
+  box-shadow:0 8px 24px rgba(20,16,13,.06);
+}
+.panel-card .info{ color:#6b6560; font-size:.92rem; }
+.panel-card .info i{ margin-right:.45rem; color:var(--bh-gold-dark); }
