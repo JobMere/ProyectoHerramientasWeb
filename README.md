@@ -40,13 +40,102 @@ Flujo de trabajo:
 ProyectoHerramientasWeb/
 │
 ├── backend/
-│   └── src/
-│       └── main/
-│           ├── java/
-│           │   └── com/sistemabarberia/
-│           │       └── entity/
-│           └── resources/
-│               └── CodigoIniciacion.sql
+│   │
+│   ├── src/
+│   │   ├── main/
+│   │   │   │
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── barberias/
+│   │   │   │           └── backend/
+│   │   │   │               │
+│   │   │   │               ├── BackendApplication.java
+│   │   │   │               │
+│   │   │   │               ├── config/
+│   │   │   │               │   ├── JwtAuthenticationFilter.java
+│   │   │   │               │   └── SecurityConfig.java
+│   │   │   │               │
+│   │   │   │               ├── controller/
+│   │   │   │               │   ├── AuthController.java
+│   │   │   │               │   ├── BarberiaController.java
+│   │   │   │               │   ├── BarberiaServicioController.java
+│   │   │   │               │   ├── ResenaController.java
+│   │   │   │               │   ├── ServicioController.java
+│   │   │   │               │   └── ZonaController.java
+│   │   │   │               │
+│   │   │   │               ├── dto/
+│   │   │   │               │   ├── AuthResponse.java
+│   │   │   │               │   ├── BarberiaRequest.java
+│   │   │   │               │   ├── BarberiaResponse.java
+│   │   │   │               │   ├── BarberiaServicioRequest.java
+│   │   │   │               │   ├── BarberiaServicioResponse.java
+│   │   │   │               │   ├── LoginRequest.java
+│   │   │   │               │   ├── LoginResponse.java
+│   │   │   │               │   ├── RegistroRequest.java
+│   │   │   │               │   ├── ResenaRequest.java
+│   │   │   │               │   └── ResenaResponse.java
+│   │   │   │               │
+│   │   │   │               ├── entity/
+│   │   │   │               │   ├── Barberia.java
+│   │   │   │               │   ├── BarberiaServicio.java
+│   │   │   │               │   ├── Resena.java
+│   │   │   │               │   ├── Rol.java
+│   │   │   │               │   ├── Servicio.java
+│   │   │   │               │   ├── Usuario.java
+│   │   │   │               │   └── Zona.java
+│   │   │   │               │
+│   │   │   │               ├── exception/
+│   │   │   │               │   └── GlobalExceptionHandler.java
+│   │   │   │               │
+│   │   │   │               ├── repository/
+│   │   │   │               │   ├── BarberiaRepository.java
+│   │   │   │               │   ├── BarberiaServicioRepository.java
+│   │   │   │               │   ├── ResenaRepository.java
+│   │   │   │               │   ├── ServicioRepository.java
+│   │   │   │               │   ├── UsuarioRepository.java
+│   │   │   │               │   └── ZonaRepository.java
+│   │   │   │               │
+│   │   │   │               └── service/
+│   │   │   │                   ├── AuthService.java
+│   │   │   │                   ├── BarberiaService.java
+│   │   │   │                   ├── BarberiaServicioService.java
+│   │   │   │                   ├── JwtService.java
+│   │   │   │                   ├── ResenaService.java
+│   │   │   │                   ├── ServicioService.java
+│   │   │   │                   └── ZonaService.java
+│   │   │   │
+│   │   │   └── resources/
+│   │   │       └── application.properties
+│   │   │
+│   │   └── test/
+│   │       └── java/
+│   │           └── com/
+│   │               └── barberias/
+│   │                   └── backend/
+│   │                       └── BackendApplicationTests.java
+│   │
+│   ├── pom.xml
+│   ├── mvnw
+│   └── mvnw.cmd
+│
+├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   ├── auth.js
+│   │
+│   ├── barberias.html
+│   ├── barberias.css
+│   ├── barberias.js
+│   │
+│   ├── panel.html
+│   ├── panel.js
+│   │
+│   ├── nosotros.html
+│   └── contacto.html
+│
+├── database/
+│   ├── CodigoIniciacion.sql
+│   └── modelo_barberhub_v2.sql
 │
 ├── Marketing de Barberias.pdf
 ├── README.md
