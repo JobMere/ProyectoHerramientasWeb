@@ -18,7 +18,6 @@ Asimismo, la plataforma permitirá a las barberías promocionar sus servicios y 
 
 | Integrante | Rol | Rama |
 |---|---|---|
-| Juan Pablo Ortiz Paiva | Frontend | `feature/frontend-pablo` |
 | Walter Ridley Rosell Felix | Frontend | `feature/frontend-walter` |
 | Tayarac Job Pampamallco Mere | Backend | `feature/backend-job` |
 | David Alejandro Tanchiva Mendoza | Backend | `feature/backend-david` |
