@@ -55,9 +55,16 @@
   /* Hero */
   .hero{
     position:relative;
+    min-height: 650px;
     background:
-      linear-gradient(100deg, rgba(10,8,6,.94) 20%, rgba(10,8,6,.55) 55%, rgba(10,8,6,.25) 100%),
-      radial-gradient(circle at 78% 30%, #2a2118 0%, #14100d 60%);
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.65) 42%,
+            rgba(0, 0, 0, 0.15) 75%,
+            rgba(0, 0, 0, 0.10) 100%
+        ),
+        url("assets/images/hero-barberia.png");
     overflow:hidden;
     padding:5rem 0 3rem;
   }
@@ -161,6 +168,9 @@
     color:#fff;
     font-family:'Poppins',sans-serif;
     font-weight:700;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .barber-photo .fav{
     position:absolute; top:.75rem; right:.75rem;
@@ -169,10 +179,10 @@
     display:flex; align-items:center; justify-content:center;
     color:#8a6b3c;
   }
-  .p1{ background:linear-gradient(160deg,#3a2c1c,#1c140c); }
-  .p2{ background:linear-gradient(160deg,#2c3438,#12181a); }
-  .p3{ background:linear-gradient(160deg,#3a2418,#170e09); }
-  .p4{ background:linear-gradient(160deg,#2a2422,#100d0c); }
+  .p1{ background-image: url("assets/images/barber-club.png");}
+  .p2{ background-image: url("assets/images/urban-cuts.png"); }
+  .p3{ background-image: url("assets/images/legendary-barbers.png"); }
+  .p4{ background-image: url("assets/images/elite-barberia.png"); }
   .barber-body{ padding:1rem 1.1rem 1.2rem; }
   .barber-body h5{ font-size:1.05rem; margin-bottom:.25rem; }
   .rating{ color:#8a6b3c; font-size:.9rem; }

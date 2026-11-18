@@ -38,3 +38,31 @@
 }
 .panel-card .info{ color:#6b6560; font-size:.92rem; }
 .panel-card .info i{ margin-right:.45rem; color:var(--bh-gold-dark); }
+.barber-photo {
+    min-height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* Uniformar tarjetas de barberías */
+#listaBarberias,
+.section-featured .row.g-4.mt-2 {
+    align-items: stretch;
+}
+
+.barber-card {
+    height: 100%;
+    overflow: hidden;
+}
+
+.barber-photo {
+    height: 210px;
+    min-height: 210px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.barber-body {
+    padding: 16px;
+}
